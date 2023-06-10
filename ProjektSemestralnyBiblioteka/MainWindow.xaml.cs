@@ -50,7 +50,7 @@ namespace ProjektSemestralnyBiblioteka
 
 		private void PrzegladajUsuwajDane_Click(object sender, RoutedEventArgs e)
 		{
-			PrzegladajDane pd = new PrzegladajDane();
+			PrzegladanieDanych pd = new PrzegladanieDanych();
 			pd.Show();
 			this.Close();
 		}

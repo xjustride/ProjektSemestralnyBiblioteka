@@ -6,6 +6,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- Nagłówek okna -->
@@ -16,6 +17,11 @@
             <Button Content="Dodaj Książkę" Click="DodajKsiazke_Click" Width="150" Margin="10" />
             <Button Content="Dodaj Czytelnika" Click="DodajCzytelnika_Click" Width="150" Margin="10" />
             <Button Content="Wypożyczenia" Click="Wypozyczenia_Click" Width="150" Margin="10" />
+        </StackPanel>
+
+        <!-- Przycisk Przeglądaj i usuwaj dane -->
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <Button Content="Przeglądaj i usuwaj dane" Click="PrzegladajUsuwajDane_Click" Width="200" />
         </StackPanel>
     </Grid>
 </Window>
