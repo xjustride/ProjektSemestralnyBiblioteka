@@ -10,23 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Logika interakcji dla klasy FormularzWypozyczania.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class FormularzWypozyczania : Window
 	{
-		public MainWindow()
+		public FormularzWypozyczania()
 		{
-			//"Data Source=MSI;Initial Catalog=ProjektSem;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 			InitializeComponent();
 		}
 
-		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
+		private void Wypozycz_Click(object sender, RoutedEventArgs e)
 		{
 
 		}

@@ -10,25 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Logika interakcji dla klasy DodawanieCzytelnikow.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class DodawanieCzytelnikow : Window
 	{
-		public MainWindow()
+		public DodawanieCzytelnikow()
 		{
-			//"Data Source=MSI;Initial Catalog=ProjektSem;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 			InitializeComponent();
 		}
 
-		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
+		private void DodajCzytelnika_Click(object sender, RoutedEventArgs e)
 		{
 
-		}
-	}
+        }
+    }
 }
