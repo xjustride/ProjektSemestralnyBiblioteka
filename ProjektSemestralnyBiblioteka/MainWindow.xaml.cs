@@ -26,7 +26,7 @@ namespace ProjektSemestralnyBiblioteka
 			InitializeComponent();
 		}
 
-		private void PrzegladajKsiazki_Click(object sender, RoutedEventArgs e)
+		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
 		{
 			GlownyInterfejs gi = new GlownyInterfejs();
 			gi.Show();
@@ -47,5 +47,12 @@ namespace ProjektSemestralnyBiblioteka
 			fw.Show();	
 			this.Close();
 		}
-	}
+
+		private void PrzegladajUsuwajDane_Click(object sender, RoutedEventArgs e)
+		{
+			PrzegladajDane pd = new PrzegladajDane();
+			pd.Show();
+			this.Close();
+		}
+    }
 }

@@ -13,7 +13,7 @@
 
         <!-- Przyciski nawigacji -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
-            <Button Content="Przeglądaj Książki" Click="PrzegladajKsiazki_Click" Width="150" Margin="10" />
+            <Button Content="Dodaj Książkę" Click="DodajKsiazke_Click" Width="150" Margin="10" />
             <Button Content="Dodaj Czytelnika" Click="DodajCzytelnika_Click" Width="150" Margin="10" />
             <Button Content="Wypożyczenia" Click="Wypozyczenia_Click" Width="150" Margin="10" />
         </StackPanel>
