@@ -22,6 +22,7 @@ namespace ProjektSemestralnyBiblioteka
 	{
 		public MainWindow()
 		{
+			//"Data Source=MSI;Initial Catalog=ProjektSem;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 			InitializeComponent();
 		}
 	}
