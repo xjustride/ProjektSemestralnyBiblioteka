@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Logika interakcji dla klasy FormularzWypozyczania.xaml
+	/// Logika interakcji dla klasy GlownyInterfejs.xaml
 	/// </summary>
-	public partial class FormularzWypozyczania : Window
+	public partial class GlownyInterfejs : Window
 	{
-		public FormularzWypozyczania()
+		public GlownyInterfejs()
 		{
 			InitializeComponent();
 		}
 
-		private void Wypozycz_Click(object sender, RoutedEventArgs e)
+		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
 		{
 
-        }
+		}
 
 		private void Powrot_Click(object sender, RoutedEventArgs e)
 		{

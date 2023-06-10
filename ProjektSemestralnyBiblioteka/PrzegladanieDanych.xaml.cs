@@ -15,25 +15,18 @@ using System.Windows.Shapes;
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Logika interakcji dla klasy FormularzWypozyczania.xaml
+	/// Logika interakcji dla klasy PrzegladanieDanych.xaml
 	/// </summary>
-	public partial class FormularzWypozyczania : Window
+	public partial class PrzegladanieDanych : Window
 	{
-		public FormularzWypozyczania()
+		public PrzegladanieDanych()
 		{
 			InitializeComponent();
 		}
 
-		private void Wypozycz_Click(object sender, RoutedEventArgs e)
+		private void Usun_Click(object sender, RoutedEventArgs e)
 		{
 
         }
-
-		private void Powrot_Click(object sender, RoutedEventArgs e)
-		{
-			MainWindow mw = new MainWindow();
-			mw.Show();
-			this.Close();
-		}
-	}
+    }
 }

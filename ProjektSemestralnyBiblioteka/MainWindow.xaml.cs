@@ -26,9 +26,26 @@ namespace ProjektSemestralnyBiblioteka
 			InitializeComponent();
 		}
 
-		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
+		private void PrzegladajKsiazki_Click(object sender, RoutedEventArgs e)
 		{
+			GlownyInterfejs gi = new GlownyInterfejs();
+			gi.Show();
+			this.Close();
+		}
 
+		private void DodajCzytelnika_Click(object sender, RoutedEventArgs e)
+		{
+			DodawanieCzytelnikow dcz = new DodawanieCzytelnikow();
+			dcz.Show();
+			this.Close();
+
+		}
+
+		private void Wypozyczenia_Click(object sender, RoutedEventArgs e)
+		{
+			FormularzWypozyczania fw = new FormularzWypozyczania();
+			fw.Show();	
+			this.Close();
 		}
 	}
 }
