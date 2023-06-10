@@ -16,11 +16,13 @@
         <ListView Grid.Row="1" x:Name="lstDane" Margin="30">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Tytuł" DisplayMemberBinding="{Binding Tytul}" />
-                    <GridViewColumn Header="Autor" DisplayMemberBinding="{Binding Autor}" />
-                    <GridViewColumn Header="Rok Wydania" DisplayMemberBinding="{Binding RokWydania}" />
-                    <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Kategoria}" />
-                    <GridViewColumn Header="Czytelnik" DisplayMemberBinding="{Binding Czytelnik}" />
+                    <GridViewColumn Header="Tytuł" DisplayMemberBinding="{Binding Ksiazka.Tytul}" />
+                    <GridViewColumn Header="Autor" DisplayMemberBinding="{Binding Ksiazka.Autor}" />
+                    <GridViewColumn Header="Rok Wydania" DisplayMemberBinding="{Binding Ksiazka.RokWydania}" />
+                    <GridViewColumn Header="Kategoria" DisplayMemberBinding="{Binding Ksiazka.Kategoria}" />
+                    <GridViewColumn Header="Czytelnik" DisplayMemberBinding="{Binding Czytelnik.ImieNazwisko}" />
+                    <GridViewColumn Header="Data Wypożyczenia" DisplayMemberBinding="{Binding DataWypozyczenia}" />
+                    <GridViewColumn Header="Data Zwrotu" DisplayMemberBinding="{Binding DataZwrotu}" />
                 </GridView>
             </ListView.View>
         </ListView>
