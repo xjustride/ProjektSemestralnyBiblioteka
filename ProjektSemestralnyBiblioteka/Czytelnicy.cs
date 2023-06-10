@@ -9,6 +9,7 @@ public partial class Czytelnicy
 {
 	[Key]
 	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	public string ImieNazwisko => $"{Imie} {Nazwisko}";
 	public int Id { get; set; }
 
 	public string Imie { get; set; } = null!;

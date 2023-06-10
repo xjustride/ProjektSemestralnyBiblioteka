@@ -26,8 +26,13 @@
         </ListView>
 
         <!-- Przycisk usuwania danych -->
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0 10">
             <Button Content="Usuń" Click="Usun_Click" Width="100" />
+        </StackPanel>
+
+        <!-- Przycisk powrotu -->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Right" Margin="0 10">
+            <Button Content="Powrót" Click="Powrot_Click" Width="100" />
         </StackPanel>
     </Grid>
 </Window>
