@@ -6,6 +6,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- Nagłówek okna -->
@@ -29,6 +30,11 @@
             </StackPanel>
 
             <Button Content="Dodaj" Click="DodajCzytelnika_Click" Width="100" HorizontalAlignment="Center" />
+        </StackPanel>
+
+        <!-- Przycisk powrotu -->
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <Button Content="Powrót" Click="Powrot_Click" Width="100" />
         </StackPanel>
     </Grid>
 </Window>
