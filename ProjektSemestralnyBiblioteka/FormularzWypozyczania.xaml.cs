@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -82,6 +83,7 @@ namespace ProjektSemestralnyBiblioteka
 				// Tworzenie nowego wypożyczenia
 				var wypozyczenie = new Wypozyczenium
 				{
+					Id = context.Wypozyczenia.Max(c => c.Id) + 1,
 					Ksiazka = ksiazka,
 					Czytelnik = czytelnik,
 					DataWypozyczenia = dataWypozyczenia.Value,
