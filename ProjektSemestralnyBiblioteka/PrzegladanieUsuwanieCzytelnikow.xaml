@@ -1,0 +1,24 @@
+﻿<Window x:Class="ProjektSemestralnyBiblioteka.PrzegladanieUsuwanieCzytelnikow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Przeglądanie Danych" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Nagłówek okna -->
+        <TextBlock Text="Przeglądanie danych" FontSize="18" HorizontalAlignment="Center" Margin="0 20 0 10" />
+
+        <!-- Lista danych -->
+        <ListBox x:Name="lstDane" Grid.Row="1" DisplayMemberPath="ImieNazwisko" />
+
+        <!-- Przyciski -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Usuń" Click="Usun_Click" Width="100" Margin="10" />
+            <Button Content="Powrót" Click="Powrot_Click" Width="100" Margin="10" />
+        </StackPanel>
+    </Grid>
+</Window>

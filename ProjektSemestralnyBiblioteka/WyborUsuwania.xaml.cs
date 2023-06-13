@@ -26,9 +26,11 @@ namespace ProjektSemestralnyBiblioteka
 			InitializeComponent();
 		}
 
-		private void PrzegladajUsuwanieKlientow_Click(object sender, RoutedEventArgs e)
+		private void PrzegladajUsuwanieCzytelnikow_Click(object sender, RoutedEventArgs e)
 		{
-			// Kod obsługujący przeglądanie i usuwanie klientów
+			PrzegladanieUsuwanieCzytelnikow pucz = new PrzegladanieUsuwanieCzytelnikow();
+			pucz.Show();
+			Window.GetWindow(this).Close();
 		}
 
 		private void PrzegladajUsuwanieWypozyczen_Click(object sender, RoutedEventArgs e)
@@ -40,7 +42,9 @@ namespace ProjektSemestralnyBiblioteka
 
 		private void PrzegladajUsuwanieKsiazek_Click(object sender, RoutedEventArgs e)
 		{
-			// Kod obsługujący przeglądanie i usuwanie książek
+			PrzegladajKsiazki pk = new PrzegladajKsiazki();
+			pk.Show();	
+			Window.GetWindow(this).Close();
 		}
 	}
 }
