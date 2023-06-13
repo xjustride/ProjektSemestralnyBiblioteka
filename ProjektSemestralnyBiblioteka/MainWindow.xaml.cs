@@ -50,9 +50,11 @@ namespace ProjektSemestralnyBiblioteka
 
 		private void PrzegladajUsuwajDane_Click(object sender, RoutedEventArgs e)
 		{
-			PrzegladanieDanych pd = new PrzegladanieDanych();
-			pd.Show();
-			this.Close();
+			//PrzegladanieDanych pd = new PrzegladanieDanych();
+			//pd.Show();
+			//this.Close();
+			WyborUsuwania wu = new WyborUsuwania();
+			this.Content = wu;
 		}
     }
 }
