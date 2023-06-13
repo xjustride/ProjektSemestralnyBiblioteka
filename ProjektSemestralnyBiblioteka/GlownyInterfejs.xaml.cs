@@ -62,9 +62,11 @@ namespace ProjektSemestralnyBiblioteka
 
 			try
 			{
+				int maxId = dbContext.Ksiazkis.Any() ? dbContext.Ksiazkis.Max(c => c.Id) : 0;
+
 				Ksiazki nowaKsiazka = new Ksiazki()
 				{
-					Id = dbContext.Ksiazkis.Max(c => c.Id) + 1,
+					Id = maxId + 1,
 					Tytul = tytul,
 					Autor = autor,
 					RokWydania = rokWydania,
