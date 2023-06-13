@@ -80,10 +80,11 @@ namespace ProjektSemestralnyBiblioteka
 					return;
 				}
 
-				// Tworzenie nowego wypożyczenia
+				// Pobierz maksymalne ID z tabeli Wypozyczenia lub ustaw ID na 1, jeśli tabela jest pusta
+				var maxId = context.Wypozyczenia.Any() ? context.Wypozyczenia.Max(c => c.Id) : 0;
 				var wypozyczenie = new Wypozyczenium
 				{
-					Id = context.Wypozyczenia.Max(c => c.Id) + 1,
+					Id = maxId + 1,
 					Ksiazka = ksiazka,
 					Czytelnik = czytelnik,
 					DataWypozyczenia = dataWypozyczenia.Value,
