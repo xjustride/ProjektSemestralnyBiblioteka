@@ -19,6 +19,12 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_8CCE3D654BB54C16A9641038F4CC20C7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -70,10 +76,40 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_04A06E08B1954ECEB8ECB7959568EDF6"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8CCE3D654BB54C16A9641038F4CC20C7"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\ikonka.ico"
+            "TargetName" = "8:ikonka.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_AD92457B8DB948E18F57AE3F54FAD96B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -131,7 +167,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BibliotekaProjektSem"
         "ProductCode" = "8:{1829CECF-BED7-4233-A732-58032940D1E4}"
-        "PackageCode" = "8:{4072658B-655E-4A2B-999C-E1379486ADCB}"
+        "PackageCode" = "8:{49201B74-A18E-477E-B01E-335D63F60A79}"
         "UpgradeCode" = "8:{310EAC52-DA22-4CC1-A7F2-D4DA696E07A5}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -251,6 +287,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_11729A21FCEC4D54BBA68941258B5570"
+            {
+            "Name" = "8:BibliotekaProjektSem"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_72B0360F17A44879BF4B9075A73E876B"
+            "Folder" = "8:_1ECF90F261AE4AC796C39036B029051D"
+            "WorkingFolder" = "8:_AD92457B8DB948E18F57AE3F54FAD96B"
+            "Icon" = "8:_8CCE3D654BB54C16A9641038F4CC20C7"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
