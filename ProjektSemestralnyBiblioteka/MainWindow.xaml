@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ProjektSemestralnyBiblioteka.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Okno Główne" Height="400" Width="600">
+        Title="Okno Główne" Height="400" Width="600" FontFamily="/Fonts/#Ubuntu Italic">
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#000000" Offset="0" />
@@ -48,14 +48,14 @@
 
         <!-- Przyciski nawigacji -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
-            <Button Content="Dodaj Książkę" Click="DodajKsiazke_Click" Width="150" Margin="10" Background="#29658f" />
-            <Button Content="Dodaj Czytelnika" Click="DodajCzytelnika_Click" Width="150" Margin="10" Background="#29658f" />
-            <Button Content="Wypożyczenia" Click="Wypozyczenia_Click" Width="150" Margin="10" Background="#29658f" />
+            <Button Content="Dodaj Książkę" Click="DodajKsiazke_Click" Width="150" Margin="10" Background="#29658f" FontFamily="/Fonts/#Ubuntu Italic" />
+            <Button Content="Dodaj Czytelnika" Click="DodajCzytelnika_Click" Width="150" Margin="10" Background="#29658f" FontFamily="/Fonts/#Ubuntu Italic" />
+            <Button Content="Wypożyczenia" Click="Wypozyczenia_Click" Width="150" Margin="10" Background="#29658f" FontFamily="/Fonts/#Ubuntu Italic" />
         </StackPanel>
 
         <!-- Przycisk Przeglądaj i usuwaj dane -->
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-            <Button Content="Przeglądaj i usuwaj dane" Click="PrzegladajUsuwajDane_Click" Width="200" Background="#29658f" />
+            <Button Content="Przeglądaj i usuwaj dane" Click="PrzegladajUsuwajDane_Click" Width="200" Background="#29658f" FontFamily="/Fonts/#Ubuntu Italic" Height="39" />
         </StackPanel>
     </Grid>
 </Window>

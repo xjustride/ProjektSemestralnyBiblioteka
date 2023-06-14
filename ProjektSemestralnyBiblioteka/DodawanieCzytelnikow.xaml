@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ProjektSemestralnyBiblioteka.DodawanieCzytelnikow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dodaj Czytelnika" Height="300" Width="400">
+        Title="Dodaj Czytelnika" Height="300" Width="400" FontFamily="/Fonts/#Ubuntu Italic">
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
             <GradientStop Color="#000000" Offset="0" />
@@ -68,26 +68,26 @@
         <!-- Formularz dodawania czytelnika -->
         <StackPanel Grid.Row="1" Margin="30">
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                <TextBlock Text="Imię:" Foreground="White" VerticalAlignment="Center" Margin="0 0 10 0" />
+                <TextBlock Text="Imię:" Foreground="White" VerticalAlignment="Center" Margin="0 0 10 0" FontFamily="/Fonts/#Ubuntu Italic"/>
                 <TextBox x:Name="txtImie" Width="200" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                <TextBlock Text="Nazwisko:" Foreground="White" VerticalAlignment="Center" Margin="0 0 10 0" />
+                <TextBlock Text="Nazwisko:" Foreground="White" VerticalAlignment="Center" Margin="0 0 10 0" FontFamily="/Fonts/#Ubuntu Italic" />
                 <TextBox x:Name="txtNazwisko" Width="200" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                <TextBlock Text="Numer telefonu:" Foreground="White" VerticalAlignment="Center" Margin="0 0 10 0" />
+                <TextBlock Text="Numer telefonu:" Foreground="White" VerticalAlignment="Center" Margin="0 0 10 0" FontFamily="/Fonts/#Ubuntu Italic"/>
                 <TextBox x:Name="txtNumerTelefonu" Width="200" />
             </StackPanel>
 
-            <Button Content="Dodaj" Click="DodajCzytelnika_Click" Width="100" HorizontalAlignment="Center" />
+            <Button Content="Dodaj" Click="DodajCzytelnika_Click" Width="100" HorizontalAlignment="Center" FontFamily="/Fonts/#Ubuntu Italic" Height="19"/>
         </StackPanel>
 
         <!-- Przycisk powrotu -->
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-            <Button Content="Powrót" Click="Powrot_Click" Width="100" />
+            <Button Content="Powrót" Click="Powrot_Click" Width="100" FontFamily="/Fonts/#Ubuntu Italic" Height="25"/>
         </StackPanel>
     </Grid>
 </Window>

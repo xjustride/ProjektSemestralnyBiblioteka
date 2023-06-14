@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ProjektSemestralnyBiblioteka.PrzegladanieUsuwanieCzytelnikow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Przeglądanie Danych" Height="450" Width="800">
+        Title="Przeglądanie Danych" Height="450" Width="800" FontFamily="/Fonts/#Ubuntu Italic">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

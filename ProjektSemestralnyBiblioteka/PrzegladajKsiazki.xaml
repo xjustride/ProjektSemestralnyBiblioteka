@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektSemestralnyBiblioteka"
         mc:Ignorable="d"
-        Title="Przeglądaj i usuwaj książki" Height="450" Width="800">
+        Title="Przeglądaj i usuwaj książki" Height="450" Width="800" FontFamily="/Fonts/#Ubuntu Italic">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
