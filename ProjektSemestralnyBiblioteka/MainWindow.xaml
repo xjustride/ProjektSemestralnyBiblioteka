@@ -4,13 +4,14 @@
         Title="Okno Główne" Height="400" Width="600">
     <Window.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#2980b9" Offset="0" />
+            <GradientStop Color="#000000" Offset="0" />
+            <GradientStop Color="#2980b9" Offset="0.5" />
             <GradientStop Color="#3498db" Offset="1" />
         </LinearGradientBrush>
     </Window.Background>
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="CornflowerBlue" />
+            <Setter Property="Background" Value="#2980b9" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="BorderBrush" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
@@ -23,7 +24,7 @@
                                     BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="25">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
-                            <Border x:Name="HighlightBorder" BorderBrush="#3498db" BorderThickness="2" CornerRadius="25" Opacity="0" />
+                            <Border x:Name="HighlightBorder" BorderBrush="#ffffff" BorderThickness="2" CornerRadius="25" Opacity="0" />
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -47,14 +48,14 @@
 
         <!-- Przyciski nawigacji -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
-            <Button Content="Dodaj Książkę" Click="DodajKsiazke_Click" Width="150" Margin="10" />
-            <Button Content="Dodaj Czytelnika" Click="DodajCzytelnika_Click" Width="150" Margin="10" />
-            <Button Content="Wypożyczenia" Click="Wypozyczenia_Click" Width="150" Margin="10" />
+            <Button Content="Dodaj Książkę" Click="DodajKsiazke_Click" Width="150" Margin="10" Background="#29658f" />
+            <Button Content="Dodaj Czytelnika" Click="DodajCzytelnika_Click" Width="150" Margin="10" Background="#29658f" />
+            <Button Content="Wypożyczenia" Click="Wypozyczenia_Click" Width="150" Margin="10" Background="#29658f" />
         </StackPanel>
 
         <!-- Przycisk Przeglądaj i usuwaj dane -->
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-            <Button Content="Przeglądaj i usuwaj dane" Click="PrzegladajUsuwajDane_Click" Width="200" />
+            <Button Content="Przeglądaj i usuwaj dane" Click="PrzegladajUsuwajDane_Click" Width="200" Background="#29658f" />
         </StackPanel>
     </Grid>
 </Window>

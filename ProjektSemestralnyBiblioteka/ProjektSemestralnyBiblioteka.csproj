@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Czcionki\" />
+    <Folder Include="Fonts\" />
   </ItemGroup>
 
 </Project>
