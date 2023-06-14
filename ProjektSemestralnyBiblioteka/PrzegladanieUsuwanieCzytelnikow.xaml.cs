@@ -13,11 +13,16 @@ namespace ProjektSemestralnyBiblioteka
 		public PrzegladanieUsuwanieCzytelnikow()
 		{
 			InitializeComponent();
-			// Inicjalizacja danych czytelników
+
+			// Initialize reader data
 			czytelnicy = PobierzCzytelnikowZBazyDanych();
 			lstDane.ItemsSource = czytelnicy;
 		}
 
+		/// <summary>
+		/// Retrieves readers from the database.
+		/// </summary>
+		/// <returns>A list of readers.</returns>
 		private List<Czytelnicy> PobierzCzytelnikowZBazyDanych()
 		{
 			using (var context = new ProjektSemContext())
@@ -26,50 +31,59 @@ namespace ProjektSemestralnyBiblioteka
 			}
 		}
 
+		/// <summary>
+		/// Event handler for the "Usun" button click event.
+		/// Deletes the selected reader and their associated loans from the database.
+		/// </summary>
 		private void Usun_Click(object sender, RoutedEventArgs e)
-		{// Sprawdź, czy został wybrany element do usunięcia
+		{
+			// Check if a reader has been selected for deletion
 			if (lstDane.SelectedItem == null)
 			{
-				MessageBox.Show("Proszę wybrać czytelnika do usunięcia.");
+				MessageBox.Show("Please select a reader to delete.");
 				return;
 			}
 
-			// Pobierz wybranego czytelnika
+			// Get the selected reader
 			var wybranyCzytelnik = lstDane.SelectedItem as Czytelnicy;
 
 			using (var context = new ProjektSemContext())
 			{
-				// Sprawdź, czy czytelnik istnieje w bazie danych
+				// Check if the reader exists in the database
 				var czytelnik = context.Czytelnicies.Include(c => c.Wypozyczenia).FirstOrDefault(c => c.Id == wybranyCzytelnik.Id);
 
 				if (czytelnik == null)
 				{
-					MessageBox.Show("Wybrany czytelnik nie istnieje.");
+					MessageBox.Show("The selected reader does not exist.");
 					return;
 				}
 
-				// Usuń powiązane wypożyczenia z bazy danych
+				// Remove associated loans from the database
 				foreach (var wypozyczenie in czytelnik.Wypozyczenia.ToList())
 				{
 					context.Wypozyczenia.Remove(wypozyczenie);
 				}
 
-				// Usuń czytelnika z bazy danych
+				// Remove the reader from the database
 				context.Czytelnicies.Remove(czytelnik);
 				context.SaveChanges();
 			}
 
-			// Odśwież widok listy danych
+			// Refresh the data list view
 			czytelnicy.Remove(wybranyCzytelnik);
 			lstDane.ItemsSource = null;
 			lstDane.ItemsSource = czytelnicy;
 
-			MessageBox.Show("Czytelnik został usunięty wraz z powiązanymi wypożyczeniami."); ;
+			MessageBox.Show("The reader has been deleted along with their associated loans.");
 		}
 
+		/// <summary>
+		/// Event handler for the "Powrot" button click event.
+		/// Closes the current window and returns to the previous window (MainWindow).
+		/// </summary>
 		private void Powrot_Click(object sender, RoutedEventArgs e)
 		{
-			// Zamknij okno przeglądania danych i wróć do poprzedniego okna (MainWindow)
+			// Close the data browsing window and return to the previous window (MainWindow)
 			MainWindow mainWindow = new MainWindow();
 			mainWindow.Show();
 			Close();

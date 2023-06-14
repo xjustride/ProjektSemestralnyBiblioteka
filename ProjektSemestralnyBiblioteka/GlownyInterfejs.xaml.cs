@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Logika interakcji dla klasy GlownyInterfejs.xaml
+	/// Interaction logic for GlownyInterfejs.xaml
 	/// </summary>
 	public partial class GlownyInterfejs : Window
 	{
@@ -24,39 +24,48 @@ namespace ProjektSemestralnyBiblioteka
 		public GlownyInterfejs()
 		{
 			InitializeComponent();
-			LoadKategorie();
+			LoadCategories();
 		}
 
-		private void LoadKategorie()
+		/// <summary>
+		/// Loads the categories from the database and populates the ComboBox.
+		/// </summary>
+		private void LoadCategories()
 		{
-			var kategorie = dbContext.Kategories.ToList();
-			cmbKategoria.ItemsSource = kategorie;
+			var categories = dbContext.Kategories.ToList();
+			cmbKategoria.ItemsSource = categories;
 		}
+
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			using (var context = new ProjektSemContext())
 			{
-				List<Kategorie> kategorie = context.Kategories.ToList();
-				cmbKategoria.ItemsSource = kategorie;
+				List<Kategorie> categories = context.Kategories.ToList();
+				cmbKategoria.ItemsSource = categories;
 			}
 		}
+
+		/// <summary>
+		/// Event handler for the "DodajKsiazke" button click event.
+		/// Adds a new book to the database based on the provided information.
+		/// </summary>
 		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
 		{
-			string tytul = txtTytul.Text;
-			string autor = txtAutor.Text;
-			int rokWydania;
+			string title = txtTytul.Text;
+			string author = txtAutor.Text;
+			int releaseYear;
 
-			if (!int.TryParse(txtRokWydania.Text, out rokWydania))
+			if (!int.TryParse(txtRokWydania.Text, out releaseYear))
 			{
-				MessageBox.Show("Podano nieprawidłowy rok wydania.");
+				MessageBox.Show("Invalid release year entered.");
 				return;
 			}
 
-			Kategorie wybranaKategoria = cmbKategoria.SelectedItem as Kategorie;
+			Kategorie selectedCategory = cmbKategoria.SelectedItem as Kategorie;
 
-			if (string.IsNullOrEmpty(tytul) || string.IsNullOrEmpty(autor) || wybranaKategoria == null)
+			if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(author) || selectedCategory == null)
 			{
-				MessageBox.Show("Wprowadź wszystkie dane.");
+				MessageBox.Show("Please enter all the data.");
 				return;
 			}
 
@@ -64,20 +73,20 @@ namespace ProjektSemestralnyBiblioteka
 			{
 				int maxId = dbContext.Ksiazkis.Any() ? dbContext.Ksiazkis.Max(c => c.Id) : 0;
 
-				Ksiazki nowaKsiazka = new Ksiazki()
+				Ksiazki newBook = new Ksiazki()
 				{
 					Id = maxId + 1,
-					Tytul = tytul,
-					Autor = autor,
-					RokWydania = rokWydania,
+					Tytul = title,
+					Autor = author,
+					RokWydania = releaseYear,
 				};
 
-				dbContext.Ksiazkis.Add(nowaKsiazka);
+				dbContext.Ksiazkis.Add(newBook);
 				dbContext.SaveChanges();
 
-				MessageBox.Show("Dodano nową książkę.");
+				MessageBox.Show("New book added.");
 
-				// Wyczyść pola tekstowe po dodaniu książki
+				// Clear the text fields after adding the book
 				txtTytul.Text = string.Empty;
 				txtAutor.Text = string.Empty;
 				txtRokWydania.Text = string.Empty;
@@ -85,10 +94,14 @@ namespace ProjektSemestralnyBiblioteka
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Wystąpił błąd podczas dodawania książki: " + ex.Message);
+				MessageBox.Show("An error occurred while adding the book: " + ex.Message);
 			}
 		}
 
+		/// <summary>
+		/// Event handler for the "Powrot" button click event.
+		/// Closes the current window and returns to the main window (MainWindow).
+		/// </summary>
 		private void Powrot_Click(object sender, RoutedEventArgs e)
 		{
 			MainWindow mw = new MainWindow();

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Logika interakcji dla klasy FormularzWypozyczania.xaml
+	/// Interaction logic for FormularzWypozyczania.xaml
 	/// </summary>
 	public partial class FormularzWypozyczania : Window
 	{
@@ -27,80 +27,92 @@ namespace ProjektSemestralnyBiblioteka
 		{
 			InitializeComponent();
 
-			// Inicjalizacja danych książek
-			ksiazki = PobierzKsiazkiZBazyDanych();
+			// Initialize book data
+			ksiazki = GetBooksFromDatabase();
 			cmbKsiazka.ItemsSource = ksiazki;
 			cmbKsiazka.DisplayMemberPath = "Tytul";
 
-			// Inicjalizacja danych czytelników
-			czytelnicy = PobierzCzytelnikowZBazyDanych();
+			// Initialize reader data
+			czytelnicy = GetReadersFromDatabase();
 			cmbCzytelnik.ItemsSource = czytelnicy;
 			cmbCzytelnik.DisplayMemberPath = "ImieNazwisko";
 		}
 
-		private List<Ksiazki> PobierzKsiazkiZBazyDanych()
+		/// <summary>
+		/// Retrieves book data from the database.
+		/// </summary>
+		/// <returns>List of books</returns>
+		private List<Ksiazki> GetBooksFromDatabase()
 		{
-			using (var context = new ProjektSemContext ())
+			using (var context = new ProjektSemContext())
 			{
 				return context.Ksiazkis.ToList();
 			}
 		}
 
-		private List<Czytelnicy> PobierzCzytelnikowZBazyDanych()
+		/// <summary>
+		/// Retrieves reader data from the database.
+		/// </summary>
+		/// <returns>List of readers</returns>
+		private List<Czytelnicy> GetReadersFromDatabase()
 		{
-			using (var context = new ProjektSemContext ())
+			using (var context = new ProjektSemContext())
 			{
 				return context.Czytelnicies.ToList();
 			}
 		}
 
+		/// <summary>
+		/// Event handler for the "Wypozycz" button click event.
+		/// Adds a new rental record to the database based on the selected information.
+		/// </summary>
 		private void Wypozycz_Click(object sender, RoutedEventArgs e)
 		{
-			// Pobierz wybrane wartości z ComboBox-ów
-			var wybranaKsiazka = cmbKsiazka.SelectedItem as Ksiazki;
-			var wybranyCzytelnik = cmbCzytelnik.SelectedItem as Czytelnicy;
-			var dataWypozyczenia = dpDataWypozyczenia.SelectedDate;
-			var dataZwrotu = dpDataZwrotu.SelectedDate;
+			var selectedBook = cmbKsiazka.SelectedItem as Ksiazki;
+			var selectedReader = cmbCzytelnik.SelectedItem as Czytelnicy;
+			var rentalDate = dpDataWypozyczenia.SelectedDate;
+			var returnDate = dpDataZwrotu.SelectedDate;
 
-			if (wybranaKsiazka == null || wybranyCzytelnik == null || dataWypozyczenia == null || dataZwrotu == null)
+			if (selectedBook == null || selectedReader == null || rentalDate == null || returnDate == null)
 			{
-				MessageBox.Show("Proszę uzupełnić wszystkie pola formularza.");
+				MessageBox.Show("Please fill in all the form fields.");
 				return;
 			}
 
 			using (var context = new ProjektSemContext())
 			{
-				// Sprawdź, czy książka i czytelnik istnieją w bazie danych
-				var ksiazka = context.Ksiazkis.Find(wybranaKsiazka.Id);
-				var czytelnik = context.Czytelnicies.Find(wybranyCzytelnik.Id);
+				var book = context.Ksiazkis.Find(selectedBook.Id);
+				var reader = context.Czytelnicies.Find(selectedReader.Id);
 
-				if (ksiazka == null || czytelnik == null)
+				if (book == null || reader == null)
 				{
-					MessageBox.Show("Wybrana książka lub czytelnik nie istnieje.");
+					MessageBox.Show("Selected book or reader does not exist.");
 					return;
 				}
 
-				// Pobierz maksymalne ID z tabeli Wypozyczenia lub ustaw ID na 1, jeśli tabela jest pusta
 				var maxId = context.Wypozyczenia.Any() ? context.Wypozyczenia.Max(c => c.Id) : 0;
-				var wypozyczenie = new Wypozyczenium
+				var rental = new Wypozyczenium
 				{
 					Id = maxId + 1,
-					Ksiazka = ksiazka,
-					Czytelnik = czytelnik,
-					DataWypozyczenia = dataWypozyczenia.Value,
-					DataZwrotu = dataZwrotu.Value
+					Ksiazka = book,
+					Czytelnik = reader,
+					DataWypozyczenia = rentalDate.Value,
+					DataZwrotu = returnDate.Value
 				};
 
-				context.Wypozyczenia.Add(wypozyczenie);
+				context.Wypozyczenia.Add(rental);
 				context.SaveChanges();
 			}
 
-			MessageBox.Show("Książka została wypożyczona.");
+			MessageBox.Show("The book has been rented.");
 		}
 
+		/// <summary>
+		/// Event handler for the "Powrot" button click event.
+		/// Closes the current window and returns to the previous window (MainWindow).
+		/// </summary>
 		private void Powrot_Click(object sender, RoutedEventArgs e)
 		{
-			// Zamknij okno formularza wypożyczania i wróć do poprzedniego okna (MainWindow)
 			MainWindow mainWindow = new MainWindow();
 			mainWindow.Show();
 			Close();

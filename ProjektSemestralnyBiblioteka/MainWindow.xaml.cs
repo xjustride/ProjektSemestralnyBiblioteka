@@ -26,6 +26,10 @@ namespace ProjektSemestralnyBiblioteka
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Event handler for the "DodajKsiazke" button click event.
+		/// Opens the "GlownyInterfejs" window and closes the current window.
+		/// </summary>
 		private void DodajKsiazke_Click(object sender, RoutedEventArgs e)
 		{
 			GlownyInterfejs gi = new GlownyInterfejs();
@@ -33,28 +37,36 @@ namespace ProjektSemestralnyBiblioteka
 			this.Close();
 		}
 
+		/// <summary>
+		/// Event handler for the "DodajCzytelnika" button click event.
+		/// Opens the "DodawanieCzytelnikow" window and closes the current window.
+		/// </summary>
 		private void DodajCzytelnika_Click(object sender, RoutedEventArgs e)
 		{
 			DodawanieCzytelnikow dcz = new DodawanieCzytelnikow();
 			dcz.Show();
 			this.Close();
-
 		}
 
+		/// <summary>
+		/// Event handler for the "Wypozyczenia" button click event.
+		/// Opens the "FormularzWypozyczania" window and closes the current window.
+		/// </summary>
 		private void Wypozyczenia_Click(object sender, RoutedEventArgs e)
 		{
 			FormularzWypozyczania fw = new FormularzWypozyczania();
-			fw.Show();	
+			fw.Show();
 			this.Close();
 		}
 
+		/// <summary>
+		/// Event handler for the "PrzegladajUsuwajDane" button click event.
+		/// Sets the content of the window to the "WyborUsuwania" user control.
+		/// </summary>
 		private void PrzegladajUsuwajDane_Click(object sender, RoutedEventArgs e)
 		{
-			//PrzegladanieDanych pd = new PrzegladanieDanych();
-			//pd.Show();
-			//this.Close();
 			WyborUsuwania wu = new WyborUsuwania();
 			this.Content = wu;
 		}
-    }
+	}
 }

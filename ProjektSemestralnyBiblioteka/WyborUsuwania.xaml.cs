@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace ProjektSemestralnyBiblioteka
 {
 	/// <summary>
-	/// Logika interakcji dla klasy WyborUsuwania.xaml
+	/// Interaction logic for WyborUsuwania.xaml
 	/// </summary>
 	public partial class WyborUsuwania : Page
 	{
@@ -26,6 +26,10 @@ namespace ProjektSemestralnyBiblioteka
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Event handler for the "PrzegladajUsuwanieCzytelnikow" button click event.
+		/// Opens the "PrzegladanieUsuwanieCzytelnikow" window and closes the current window.
+		/// </summary>
 		private void PrzegladajUsuwanieCzytelnikow_Click(object sender, RoutedEventArgs e)
 		{
 			PrzegladanieUsuwanieCzytelnikow pucz = new PrzegladanieUsuwanieCzytelnikow();
@@ -33,6 +37,10 @@ namespace ProjektSemestralnyBiblioteka
 			Window.GetWindow(this).Close();
 		}
 
+		/// <summary>
+		/// Event handler for the "PrzegladajUsuwanieWypozyczen" button click event.
+		/// Opens the "PrzegladanieDanych" window and closes the current window.
+		/// </summary>
 		private void PrzegladajUsuwanieWypozyczen_Click(object sender, RoutedEventArgs e)
 		{
 			PrzegladanieDanych pd = new PrzegladanieDanych();
@@ -40,10 +48,14 @@ namespace ProjektSemestralnyBiblioteka
 			Window.GetWindow(this).Close();
 		}
 
+		/// <summary>
+		/// Event handler for the "PrzegladajUsuwanieKsiazek" button click event.
+		/// Opens the "PrzegladajKsiazki" window and closes the current window.
+		/// </summary>
 		private void PrzegladajUsuwanieKsiazek_Click(object sender, RoutedEventArgs e)
 		{
 			PrzegladajKsiazki pk = new PrzegladajKsiazki();
-			pk.Show();	
+			pk.Show();
 			Window.GetWindow(this).Close();
 		}
 	}

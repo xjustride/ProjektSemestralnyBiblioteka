@@ -10,9 +10,9 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Przeglądaj i usuwaj czytelników" Width="200" Margin="0 0 0 10" Click="PrzegladajUsuwanieCzytelnikow_Click" />
-            <Button Content="Przeglądaj i usuwaj wypożyczenia" Width="200" Margin="0 0 0 10" Click="PrzegladajUsuwanieWypozyczen_Click" />
-            <Button Content="Przeglądaj i usuwaj książki" Width="200" Click="PrzegladajUsuwanieKsiazek_Click" />
+            <Button Content="Przeglądaj i usuwaj czytelników" Width="200" Margin="0 0 0 10" Click="PrzegladajUsuwanieCzytelnikow_Click" Height="40" />
+            <Button Content="Przeglądaj i usuwaj wypożyczenia" Width="200" Margin="0 0 0 10" Click="PrzegladajUsuwanieWypozyczen_Click" Height="40" />
+            <Button Content="Przeglądaj i usuwaj książki" Width="200" Click="PrzegladajUsuwanieKsiazek_Click" Height="40" />
         </StackPanel>
     </Grid>
 </Page>
